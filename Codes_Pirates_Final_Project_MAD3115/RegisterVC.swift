@@ -16,6 +16,11 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var employeeSpecInput: UITextField!
     @IBOutlet weak var employeeSpecLabel: UILabel!
     
+    @IBOutlet weak var carTypeInput: UITextField!
+    @IBOutlet weak var sideCar: UILabel!
+    @IBOutlet weak var sideCarType: UISegmentedControl!
+    @IBOutlet weak var carType: UILabel!
+    
     var employeeTypeData: [String] = []
     var vehicleColorData:  [String] = []
     
@@ -72,17 +77,24 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func vehicleTypeSelection(_ sender: Any) {
-        //vehicleType.selectedSegmentTintColor = .blue
+        vehicleType.selectedSegmentTintColor = .white
+        vehicleType.backgroundColor = .cyan
+        
         switch vehicleType.selectedSegmentIndex {
                 case 0:
-                   // some code
-            vehicleType.selectedSegmentTintColor = .white
-            vehicleType.backgroundColor = .gray
+            carType.isHidden = false
+            carTypeInput.isHidden = false
+            sideCar.isHidden = true
+            sideCarType.isHidden = true
+            
                 case 1 :
-                  // some code
-            vehicleType.backgroundColor = .gray
+            carType.isHidden = true
+            carTypeInput.isHidden = true
+            sideCar.isHidden = false
+            sideCarType.isHidden = false
+          
                 default:
-                    break
+                break
                 }
                 
     }
