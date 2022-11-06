@@ -11,7 +11,6 @@ class EmployeeDetailsVC: UIViewController {
     weak var delegate: ViewController?
     var selectedEmployee: [String: String] = [:]
     var employeeObj:  Manager?
-    var vehicleObj: Vehicle?
         
     @IBOutlet weak var textView: UITextView!
     
@@ -31,11 +30,12 @@ class EmployeeDetailsVC: UIViewController {
         let employeeSideCar = selectedEmployee["Employee_sideCar"]!
         
         if employeeVehicle == "Car"{
-            vehicleObj =  Car(model: employeeVehicleModel, plate: employeeVehiclePlate, color: employeeVehicleColor, type: employeeCarType)
-        }
-        
-        if employeeType == "Manager"{
-            employeeObj = Manager(name: employeeName, birthYear: employeebirthYear, nbClients: employeeSpecNumber, monthlySalary: employeeMonthlySalary)
+            let carObj =  Car(model: employeeVehicleModel, plate: employeeVehiclePlate, color: employeeVehicleColor, type: employeeCarType)
+            
+            if employeeType == "Manager"{
+                employeeObj = Manager(name: employeeName, birthYear: employeebirthYear, nbClients: employeeSpecNumber, monthlySalary: employeeMonthlySalary, employeeVehicle: carObj)
+                
+            }
         }
         
         textView.text = employeeObj!.description()

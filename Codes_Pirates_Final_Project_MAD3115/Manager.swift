@@ -12,7 +12,7 @@ class Manager: Employee{
     var birthYear: Int
     var monthlySalary: Int
     var _rate: Int? = 100
-    var employeeVehicle: Vehicle?=nil
+    var employeeVehicle: Vehicle?
    
    // var age: Int
     //var income: Float
@@ -23,6 +23,7 @@ class Manager: Employee{
         self.monthlySalary = monthlySalary
         self._rate = _rate
         self.nbClients = nbClients
+        self.employeeVehicle = employeeVehicle
     
     }
     
@@ -48,7 +49,7 @@ class Manager: Employee{
         statement = "Name: \(name), a Manager\n"
         statement += "Age: \(age) \n"
         if let managerVehicle = employeeVehicle{
-            statement += managerVehicle.getDetails()
+            statement += managerVehicle.getFullDetails()
         }
         statement += "Occupation rate: \(rate!)% \n"
         statement += "Annual income: $\(income) \n"

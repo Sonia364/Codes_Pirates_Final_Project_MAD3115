@@ -14,17 +14,18 @@ class Car: Vehicle{
     var color: String
     var type: String
     
-    init(model: String, plate: String, color: String, type: String) {
+    init(model: String, plate: String, color: String, type: String ) {
         self.model = model
         self.plate = plate
         self.color = color
         self.type = type
     }
     
-    func getDetails() -> String {
+    func getFullDetails()-> String{
+
         var carDescription: String
-        carDescription = "Employee has a car\n"
-        carDescription +=  getDetails()
+        carDescription = "Employee has a car \n"
+        carDescription +=  (self as Vehicle).getDetails()
         carDescription += "\t - Type: \(type)\n"
 
         return carDescription
