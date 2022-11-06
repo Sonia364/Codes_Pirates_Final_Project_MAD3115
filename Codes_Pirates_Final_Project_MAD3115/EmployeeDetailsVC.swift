@@ -10,7 +10,7 @@ import UIKit
 class EmployeeDetailsVC: UIViewController {
     weak var delegate: ViewController?
     var selectedEmployee: [String: String] = [:]
-    var employeeObj:  Manager?
+    var employeeObj: Employee?
     var vehichleObj: Vehicle?
         
     @IBOutlet weak var textView: UITextView!
@@ -38,7 +38,13 @@ class EmployeeDetailsVC: UIViewController {
         }
         
         if employeeType == "Manager"{
+            
             employeeObj = Manager(name: employeeName, birthYear: employeebirthYear, nbClients: employeeSpecNumber, monthlySalary: employeeMonthlySalary, employeeVehicle: vehichleObj)
+            
+        }else if employeeType == "Programmer"{
+            
+            employeeObj = Programmer(name: employeeName, birthYear: employeebirthYear, nbProjects: employeeSpecNumber, monthlySalary: employeeMonthlySalary, employeeVehicle: vehichleObj)
+            
         }
         
         textView.text = employeeObj!.description()

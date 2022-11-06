@@ -18,7 +18,9 @@ protocol Employee{
     //var income : Float { get }
     var employeeVehicle : Vehicle? {get}
     //var contract : Contract?
+    func description()-> String
     func annualIncome()-> Float
+    
 }
 
 
