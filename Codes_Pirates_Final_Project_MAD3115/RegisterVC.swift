@@ -81,24 +81,68 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         vehicleType.backgroundColor = .cyan
         
         switch vehicleType.selectedSegmentIndex {
-                case 0:
-            carType.isHidden = false
-            carTypeInput.isHidden = false
-            sideCar.isHidden = true
-            sideCarType.isHidden = true
-            
-                case 1 :
-            carType.isHidden = true
-            carTypeInput.isHidden = true
-            sideCar.isHidden = false
-            sideCarType.isHidden = false
-          
-                default:
+            case 0:
+                carType.isHidden = false
+                carTypeInput.isHidden = false
+                sideCar.isHidden = true
+                sideCarType.isHidden = true
+                
+            case 1 :
+                carType.isHidden = true
+                carTypeInput.isHidden = true
+                sideCar.isHidden = false
+                sideCarType.isHidden = false
+              
+            default:
                 break
-                }
+        }
                 
     }
     
+    
+    @IBAction func registerBtn() {
+        
+        let infoAlert = UIAlertController(title: "Verify Details!", message:"", preferredStyle: .alert)
+        
+        for case let textField as UITextField in self.view.subviews {
+            if textField.text == "" {
+                // show error
+                infoAlert.message = "You should fill all the fields"
+                showError(infoAlert)
+                return
+            }
+        }
+        
+        infoAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {_ in self.displayHomeVC()}))
+        infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(infoAlert, animated: true, completion: nil)
+    }
+    
+    private func showError(_ alert: UIAlertController) {
+        let action = UIAlertAction(title: "Retry", style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
+    func displayHomeVC(){
+        
+//        let newUser = User(name: txtName.text!, address: txtAddress.text!, contactNumber: txtContactNumber.text!, postalCode: txtPostalCode.text!, city: cityList[pickCity.selectedRow(inComponent: 0)], email: txtEmail.text!, password: txtPassword.text!, gender: self.gender, dob: pickDOB.date)
+//
+//        if User.addUser(newUser: newUser) {
+//            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
+//            navigationController?.pushViewController(homeVC, animated: true)
+//        } else {
+//            let infoAlert = UIAlertController(title: "User Account", message: "An account with this email address already exist.", preferredStyle: .alert)
+//            infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//            self.present(infoAlert,animated: true)
+//        }
+        
+        
+//        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeScene")
+//        navigationController?.pushViewController(homeVC, animated: true)
+    }
     
 
 
