@@ -20,6 +20,8 @@
 		47DE52F2291814CD00D74B26 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F1291814CD00D74B26 /* Vehicle.swift */; };
 		47DE52F4291816D200D74B26 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F3291816D200D74B26 /* Car.swift */; };
 		47DE52F629184C8100D74B26 /* Motorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F529184C8100D74B26 /* Motorcycle.swift */; };
+		47DE52F82918523900D74B26 /* Programmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F72918523900D74B26 /* Programmer.swift */; };
+		47DE52FA2918524500D74B26 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F92918524500D74B26 /* Tester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		47DE52F1291814CD00D74B26 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		47DE52F3291816D200D74B26 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		47DE52F529184C8100D74B26 /* Motorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motorcycle.swift; sourceTree = "<group>"; };
+		47DE52F72918523900D74B26 /* Programmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programmer.swift; sourceTree = "<group>"; };
+		47DE52F92918524500D74B26 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				47DE52F1291814CD00D74B26 /* Vehicle.swift */,
 				47DE52F3291816D200D74B26 /* Car.swift */,
 				47DE52F529184C8100D74B26 /* Motorcycle.swift */,
+				47DE52F72918523900D74B26 /* Programmer.swift */,
+				47DE52F92918524500D74B26 /* Tester.swift */,
 			);
 			path = Codes_Pirates_Final_Project_MAD3115;
 			sourceTree = "<group>";
@@ -159,11 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DE52F82918523900D74B26 /* Programmer.swift in Sources */,
 				47DE52F2291814CD00D74B26 /* Vehicle.swift in Sources */,
 				475EA1892916F4F400CFE687 /* ViewController.swift in Sources */,
 				47DE52EE291748B100D74B26 /* Employee.swift in Sources */,
 				47DE52EA29173AA900D74B26 /* EmployeeDetailsVC.swift in Sources */,
 				475EA1992916FA5E00CFE687 /* RegisterVC.swift in Sources */,
+				47DE52FA2918524500D74B26 /* Tester.swift in Sources */,
 				47DE52F4291816D200D74B26 /* Car.swift in Sources */,
 				47DE52F629184C8100D74B26 /* Motorcycle.swift in Sources */,
 				47DE52F029174ED500D74B26 /* Manager.swift in Sources */,
