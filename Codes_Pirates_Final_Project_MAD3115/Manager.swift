@@ -37,7 +37,7 @@ class Manager: Employee{
     }
     
     
-    //var contract = contractInfo()
+    //var contract = contractInfo() test
     
     func description()-> String {
         
@@ -49,7 +49,7 @@ class Manager: Employee{
         //            statement += managerVehicle.getDetails()
         //        }
         statement += "Occupation rate: \(rate!)% \n"
-        
+    
         statement += "Annual income: $\(income) \n"
         statement += "He/She has brought \(nbClients) new clients."
         return  statement
