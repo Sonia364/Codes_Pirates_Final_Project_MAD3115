@@ -200,7 +200,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T0t-tU-Zo4">
-                                <rect key="frame" x="219" y="320" width="141" height="91"/>
+                                <rect key="frame" x="219" y="320" width="140" height="91"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="d9m-2r-NjH" id="Nzc-f1-aSz"/>
@@ -281,15 +281,23 @@
                     </view>
                     <navigationItem key="navigationItem" title="REGISTRATION FORM" id="3dt-iO-ou6"/>
                     <connections>
+                        <outlet property="birthYear" destination="l0W-rD-8j1" id="rX7-ef-Rzz"/>
                         <outlet property="carType" destination="V0A-S6-0gF" id="hMF-9B-f7T"/>
                         <outlet property="carTypeInput" destination="ewO-Rc-5Vv" id="eBl-Jv-G71"/>
+                        <outlet property="employeeId" destination="ZZy-pK-OBQ" id="8ZM-Nz-GzH"/>
                         <outlet property="employeeSpecInput" destination="j71-P5-P0K" id="vor-6e-Rhr"/>
                         <outlet property="employeeSpecLabel" destination="Dwf-cL-Pdh" id="feT-sX-AFN"/>
-                        <outlet property="employeeTypePicker" destination="T0t-tU-Zo4" id="E8R-34-IjQ"/>
+                        <outlet property="employeeTypePicker" destination="T0t-tU-Zo4" id="jeS-M4-Z1b"/>
+                        <outlet property="firstName" destination="BCn-OZ-dVM" id="ZEi-3r-W5h"/>
+                        <outlet property="lastName" destination="Umd-84-74G" id="MOy-Af-JRV"/>
+                        <outlet property="monthlySalary" destination="o9n-iF-RDe" id="SGX-la-tuV"/>
+                        <outlet property="occupationRate" destination="XoE-eb-vAX" id="lbe-mT-QvF"/>
+                        <outlet property="plateNumber" destination="eoJ-cf-ZD9" id="9YT-Vr-x2Q"/>
                         <outlet property="sideCar" destination="2Es-Qo-Kuv" id="51F-PY-qn2"/>
                         <outlet property="sideCarType" destination="aY5-zq-BpU" id="WpW-kW-YPd"/>
                         <outlet property="vehicleColorPicker" destination="Hie-0Q-V8l" id="AJz-Wi-Mc8"/>
-                        <outlet property="vehicleType" destination="VF5-CV-b3K" id="XH3-nR-m0n"/>
+                        <outlet property="vehicleModel" destination="VId-hQ-MqN" id="Fb8-Di-iFe"/>
+                        <outlet property="vehicleType" destination="VF5-CV-b3K" id="7jR-YG-kZ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQ0-fZ-v1e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

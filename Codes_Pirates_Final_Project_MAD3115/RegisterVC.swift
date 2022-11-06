@@ -9,13 +9,19 @@ import UIKit
 
 class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
    
-    
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var birthYear: UITextField!
+    @IBOutlet weak var monthlySalary: UITextField!
+    @IBOutlet weak var occupationRate: UITextField!
+    @IBOutlet weak var employeeId: UITextField!
+    @IBOutlet weak var vehicleModel: UITextField!
+    @IBOutlet weak var plateNumber: UITextField!
     @IBOutlet weak var vehicleType: UISegmentedControl!
     @IBOutlet weak var vehicleColorPicker: UIPickerView!
     @IBOutlet weak var employeeTypePicker: UIPickerView!
     @IBOutlet weak var employeeSpecInput: UITextField!
     @IBOutlet weak var employeeSpecLabel: UILabel!
-    
     @IBOutlet weak var carTypeInput: UITextField!
     @IBOutlet weak var sideCar: UILabel!
     @IBOutlet weak var sideCarType: UISegmentedControl!
@@ -23,6 +29,9 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     var employeeTypeData: [String] = []
     var vehicleColorData:  [String] = []
+    var vehicleName : String?
+    var carTypeValue: String?
+    var sideCarValue: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,18 +95,22 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
                 carTypeInput.isHidden = false
                 sideCar.isHidden = true
                 sideCarType.isHidden = true
+                vehicleName = "Car"
                 
             case 1 :
                 carType.isHidden = true
                 carTypeInput.isHidden = true
                 sideCar.isHidden = false
                 sideCarType.isHidden = false
+                vehicleName = "MotorCycle"
               
             default:
                 break
         }
                 
     }
+    
+    
     
     
     @IBAction func registerBtn() {
@@ -126,8 +139,10 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     func displayHomeVC(){
         
-//        let newUser = User(name: txtName.text!, address: txtAddress.text!, contactNumber: txtContactNumber.text!, postalCode: txtPostalCode.text!, city: cityList[pickCity.selectedRow(inComponent: 0)], email: txtEmail.text!, password: txtPassword.text!, gender: self.gender, dob: pickDOB.date)
-//
+        let newRegUser = RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId: employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)]  , employeeSpecNumber: employeeSpecInput.text!, vehicleType: self.vehicleName!, vehicleCarType: <#String#>, vehicleSideCar: <#String#>, vehicleModel: vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
+        
+//        let newRegUser = User(name: txtName.text!, address: txtAddress.text!, contactNumber: txtContactNumber.text!, postalCode: txtPostalCode.text!, city: cityList[pickCity.selectedRow(inComponent: 0)], email: txtEmail.text!, password: txtPassword.text!, gender: self.gender, dob: pickDOB.date)
+
 //        if User.addUser(newUser: newUser) {
 //            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //            let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
@@ -137,8 +152,8 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 //            infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 //            self.present(infoAlert,animated: true)
 //        }
-        
-        
+//
+//
 //        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeScene")
 //        navigationController?.pushViewController(homeVC, animated: true)
