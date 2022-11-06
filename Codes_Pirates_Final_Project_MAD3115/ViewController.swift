@@ -49,6 +49,17 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let EmployeeDetailsVC = mainSB.instantiateViewController(withIdentifier: "EmployeeDetailsScene") as? EmployeeDetailsVC
+        EmployeeDetailsVC?.delegate = self
+        
+        EmployeeDetailsVC?.selectedEmployee = employeeData[indexPath.row]
+        if let EmployeeDetailsVC = EmployeeDetailsVC {
+            navigationController?.pushViewController(EmployeeDetailsVC, animated: true)
+        }
+    }
+    
     
 }
 
