@@ -46,6 +46,11 @@ class EmployeeDetailsVC: UIViewController {
             employeeObj = Programmer(name: employeeName, birthYear: employeebirthYear, nbProjects: employeeSpecNumber, monthlySalary: employeeMonthlySalary, employeeVehicle: vehichleObj)
             
         }
+        else if employeeType == "Tester"{
+            
+            employeeObj = Tester(name: employeeName, birthYear: employeebirthYear, nbBugs: employeeSpecNumber, monthlySalary: employeeMonthlySalary, employeeVehicle: vehichleObj)
+            
+        }
         
         textView.text = employeeObj!.description()
     }
