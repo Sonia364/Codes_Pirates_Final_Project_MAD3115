@@ -24,6 +24,21 @@ class ViewController: UIViewController {
                                                      "Employee_vehicleModel":"Lamborghini",
                                                      "Employee_plateNumber":"Custom Plate",
                                                      "Employee_vehicleColor": "White"
+                                                    ],
+                                                    ["Employee_id":"Emp_002",
+                                                     "Employee_firstName": "Peter",
+                                                     "Employee_lastName":"Rock",
+                                                     "Employee_birthYear":"1975",
+                                                     "Employee_monthlySalary": "6000",
+                                                     "Employee_occupationRate":"100%",
+                                                     "Employee_type":"Manager",
+                                                     "Employee_spec_number":"10",
+                                                     "Employee_vehicle": "Motocycle",
+                                                     "Employee_carType": "",
+                                                     "Employee_sideCar": "True",
+                                                     "Employee_vehicleModel": "Honda",
+                                                     "Employee_plateNumber":"Custom Plate",
+                                                     "Employee_vehicleColor": "Black"
                                                     ]
                                                 ]
     @IBOutlet weak var tableView: UITableView!

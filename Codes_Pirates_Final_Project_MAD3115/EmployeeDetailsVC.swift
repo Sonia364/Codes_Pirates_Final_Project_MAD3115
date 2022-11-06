@@ -11,6 +11,7 @@ class EmployeeDetailsVC: UIViewController {
     weak var delegate: ViewController?
     var selectedEmployee: [String: String] = [:]
     var employeeObj:  Manager?
+    var vehichleObj: Vehicle?
         
     @IBOutlet weak var textView: UITextView!
     
@@ -27,15 +28,17 @@ class EmployeeDetailsVC: UIViewController {
         let employeeVehiclePlate = selectedEmployee["Employee_plateNumber"]!
         let employeeVehicleColor = selectedEmployee["Employee_vehicleColor"]!
         let employeeCarType = selectedEmployee["Employee_carType"]!
-        let employeeSideCar = selectedEmployee["Employee_sideCar"]!
+        let employeeSideCar = (selectedEmployee["Employee_sideCar"]! == "Yes") ? true: false
         
         if employeeVehicle == "Car"{
-            let carObj =  Car(model: employeeVehicleModel, plate: employeeVehiclePlate, color: employeeVehicleColor, type: employeeCarType)
+            vehichleObj =  Car(model: employeeVehicleModel, plate: employeeVehiclePlate, color: employeeVehicleColor, type: employeeCarType)
+        }else{
+            vehichleObj =  Motorcycle(model: employeeVehicleModel, plate: employeeVehiclePlate, color: employeeVehicleColor, sideCar: employeeSideCar)
             
-            if employeeType == "Manager"{
-                employeeObj = Manager(name: employeeName, birthYear: employeebirthYear, nbClients: employeeSpecNumber, monthlySalary: employeeMonthlySalary, employeeVehicle: carObj)
-                
-            }
+        }
+        
+        if employeeType == "Manager"{
+            employeeObj = Manager(name: employeeName, birthYear: employeebirthYear, nbClients: employeeSpecNumber, monthlySalary: employeeMonthlySalary, employeeVehicle: vehichleObj)
         }
         
         textView.text = employeeObj!.description()
