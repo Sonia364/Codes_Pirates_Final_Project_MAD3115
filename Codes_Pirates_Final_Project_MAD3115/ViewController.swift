@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var employeeData:[String:[String:String]] = ["Emp_001":
+    var employeeData:[[String:String]] = [
                                                     ["Employee_id":"Emp_001",
                                                      "Employee_firstName": "Serge",
                                                      "Employee_lastName":"",
@@ -41,7 +41,12 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-        return cell.textLabel.text
+        let rowData = employeeData[indexPath.row]
+        let name = String(rowData["Employee_firstName"]!) + String(rowData["Employee_lastName"]!)
+        let id  = String(rowData["Employee_id"]!)
+        cell.textLabel?.text = "Name: \(name)"
+        cell.detailTextLabel?.text = "Id: \(id)"
+        return cell
     }
     
     
