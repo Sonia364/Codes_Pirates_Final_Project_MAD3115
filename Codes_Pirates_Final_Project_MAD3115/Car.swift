@@ -27,7 +27,6 @@ class Car: Vehicle{
         carDescription = "Employee has a car \n"
         carDescription +=  (self as Vehicle).getDetails()
         carDescription += "\t - Type: \(type)\n"
-
         return carDescription
     }
     
