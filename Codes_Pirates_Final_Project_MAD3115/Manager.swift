@@ -7,21 +7,21 @@
 
 import Foundation
 
-class Manager: Employee, CustomStringConvertible {
+class Manager: Employee{
     var name: String
     var birthYear: Int
     var monthlySalary: Int
-    var _rate: Int?
-    var age: Int
+    var _rate: Int? = 100
+   
+   // var age: Int
     //var income: Float
     
-    init(name: String, birthYear: Int, monthlySalary: Int, _rate: Int? = nil, age: Int) {
+    init(name: String, birthYear: Int, monthlySalary: Int, _rate: Int? = 100) {
         self.name = name
         self.birthYear = birthYear
         self.monthlySalary = monthlySalary
         self._rate = _rate
-        self.age = age
-        
+    
     }
     
     private let GAIN_FACTOR_CLIENT = 500
@@ -39,7 +39,8 @@ class Manager: Employee, CustomStringConvertible {
     
     //var contract = contractInfo()
     
-    var description: String {
+    func description()-> String {
+        
         let income = annualIncome() + annualBonus()
         var statement: String = ""
         statement = "Name: \(name), a Manager\n"
@@ -52,8 +53,7 @@ class Manager: Employee, CustomStringConvertible {
         statement += "Annual income: $\(income) \n"
         statement += "He/She has brought \(nbClients) new clients."
         return  statement
-        
-        
+
     }
     
 

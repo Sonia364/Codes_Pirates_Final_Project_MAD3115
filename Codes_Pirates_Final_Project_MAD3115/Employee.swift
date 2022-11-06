@@ -22,7 +22,12 @@ protocol Employee{
 }
 
 
+
 extension Employee{
+    var age: Int {
+        return Calendar.current.component(.year, from: Date())-birthYear
+    }
+    
     var rate: Int?{
         
         get{
