@@ -30,7 +30,6 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var employeeTypeData: [String] = []
     var vehicleColorData:  [String] = []
     var vehicleName : String?
-    var carTypeValue: String?
     var sideCarValue: String?
     
     override func viewDidLoad() {
@@ -110,6 +109,20 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
                 
     }
     
+    @IBAction func sideCarSelection() {
+        sideCarType.selectedSegmentTintColor = .white
+        sideCarType.backgroundColor = .cyan
+        
+        switch sideCarType.selectedSegmentIndex {
+        case 0:
+            sideCarValue = "Yes"
+        case 1 :
+            sideCarValue = "No"
+        default: break
+            
+        }
+    }
+    
     
     
     
@@ -139,19 +152,20 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     func displayHomeVC(){
         
-        let newRegUser = RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId: employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)]  , employeeSpecNumber: employeeSpecInput.text!, vehicleType: self.vehicleName!, vehicleCarType: <#String#>, vehicleSideCar: <#String#>, vehicleModel: vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
-        
-//        let newRegUser = User(name: txtName.text!, address: txtAddress.text!, contactNumber: txtContactNumber.text!, postalCode: txtPostalCode.text!, city: cityList[pickCity.selectedRow(inComponent: 0)], email: txtEmail.text!, password: txtPassword.text!, gender: self.gender, dob: pickDOB.date)
+        let newRegUser = RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId: employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)]  , employeeSpecNumber: employeeSpecInput.text!, vehicleType: self.vehicleName!, vehicleCarType: carTypeInput.text!, vehicleSideCar: "Yes", vehicleModel: vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
 
-//        if User.addUser(newUser: newUser) {
-//            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
-//            navigationController?.pushViewController(homeVC, animated: true)
-//        } else {
-//            let infoAlert = UIAlertController(title: "User Account", message: "An account with this email address already exist.", preferredStyle: .alert)
-//            infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//            self.present(infoAlert,animated: true)
-//        }
+        if RegisteredUser.addEmployee(newEmployee: newRegUser) {
+            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
+            navigationController?.pushViewController(homeVC, animated: true)
+            
+            print(RegisteredUser.regUserList)
+            
+        } else {
+            let infoAlert = UIAlertController(title: "Employee Details!", message: "An employee with this employee id already exists.", preferredStyle: .alert)
+            infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(infoAlert,animated: true)
+        }
 //
 //
 //        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

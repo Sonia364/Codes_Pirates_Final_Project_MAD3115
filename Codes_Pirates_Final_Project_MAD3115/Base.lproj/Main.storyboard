@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Codes_Pirates_Final_Project_MAD3115" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTVScene" id="BYZ-38-t0r" customClass="ViewController" customModule="Codes_Pirates_Final_Project_MAD3115" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +253,9 @@
                                     <segment title="Yes"/>
                                     <segment title="No"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sideCarSelection" destination="d9m-2r-NjH" eventType="valueChanged" id="M39-SL-P6r"/>
+                                </connections>
                             </segmentedControl>
                             <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hie-0Q-V8l">
                                 <rect key="frame" x="196" y="650" width="180" height="104"/>
