@@ -12,15 +12,17 @@ class Manager: Employee{
     var birthYear: Int
     var monthlySalary: Int
     var _rate: Int? = 100
+    var employeeVehicle: Vehicle?=nil
    
    // var age: Int
     //var income: Float
     
-    init(name: String, birthYear: Int, monthlySalary: Int, _rate: Int? = 100) {
+    init(name: String, birthYear: Int, nbClients: Int, monthlySalary: Int, _rate: Int? = 100,employeeVehicle: Vehicle?=nil) {
         self.name = name
         self.birthYear = birthYear
         self.monthlySalary = monthlySalary
         self._rate = _rate
+        self.nbClients = nbClients
     
     }
     
@@ -37,7 +39,7 @@ class Manager: Employee{
     }
     
     
-    //var contract = contractInfo() test
+    //var contract = contractInfo()
     
     func description()-> String {
         
@@ -45,11 +47,10 @@ class Manager: Employee{
         var statement: String = ""
         statement = "Name: \(name), a Manager\n"
         statement += "Age: \(age) \n"
-        //        if let managerVehicle = employeeVehicle{
-        //            statement += managerVehicle.getDetails()
-        //        }
+        if let managerVehicle = employeeVehicle{
+            statement += managerVehicle.getDetails()
+        }
         statement += "Occupation rate: \(rate!)% \n"
-    
         statement += "Annual income: $\(income) \n"
         statement += "He/She has brought \(nbClients) new clients."
         return  statement

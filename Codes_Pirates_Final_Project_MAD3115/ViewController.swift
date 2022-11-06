@@ -17,6 +17,7 @@ class ViewController: UIViewController {
                                                      "Employee_monthlySalary": "5000",
                                                      "Employee_occupationRate":"100%",
                                                      "Employee_type":"Manager",
+                                                     "Employee_spec_number":"10",
                                                      "Employee_vehicle": "Car",
                                                      "Employee_carType": "Sports",
                                                      "Employee_sideCar": "",

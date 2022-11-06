@@ -11,19 +11,31 @@ class EmployeeDetailsVC: UIViewController {
     weak var delegate: ViewController?
     var selectedEmployee: [String: String] = [:]
     var employeeObj:  Manager?
+    var vehicleObj: Vehicle?
         
     @IBOutlet weak var textView: UITextView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    let employeeType = selectedEmployee["Employee_type"]
+        let employeeType = selectedEmployee["Employee_type"]
         let employeeName = selectedEmployee["Employee_firstName"]! + selectedEmployee["Employee_lastName"]!
         let employeebirthYear = Int(selectedEmployee["Employee_birthYear"]!) ?? 0
         let employeeMonthlySalary = Int(selectedEmployee["Employee_monthlySalary"]!) ?? 0
+        let employeeSpecNumber = Int(selectedEmployee["Employee_spec_number"]!) ?? 0
+        let employeeVehicle = selectedEmployee["Employee_vehicle"]!
+        let employeeVehicleModel = selectedEmployee["Employee_vehicleModel"]!
+        let employeeVehiclePlate = selectedEmployee["Employee_plateNumber"]!
+        let employeeVehicleColor = selectedEmployee["Employee_vehicleColor"]!
+        let employeeCarType = selectedEmployee["Employee_carType"]!
+        let employeeSideCar = selectedEmployee["Employee_sideCar"]!
+        
+        if employeeVehicle == "Car"{
+            vehicleObj =  Car(model: employeeVehicleModel, plate: employeeVehiclePlate, color: employeeVehicleColor, type: employeeCarType)
+        }
         
         if employeeType == "Manager"{
-             employeeObj = Manager(name: employeeName, birthYear: employeebirthYear, monthlySalary: employeeMonthlySalary)
+            employeeObj = Manager(name: employeeName, birthYear: employeebirthYear, nbClients: employeeSpecNumber, monthlySalary: employeeMonthlySalary)
         }
         
         textView.text = employeeObj!.description()

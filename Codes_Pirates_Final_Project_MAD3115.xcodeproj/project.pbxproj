@@ -17,6 +17,8 @@
 		47DE52EA29173AA900D74B26 /* EmployeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52E929173AA900D74B26 /* EmployeeDetailsVC.swift */; };
 		47DE52EE291748B100D74B26 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52ED291748B100D74B26 /* Employee.swift */; };
 		47DE52F029174ED500D74B26 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52EF29174ED500D74B26 /* Manager.swift */; };
+		47DE52F2291814CD00D74B26 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F1291814CD00D74B26 /* Vehicle.swift */; };
+		47DE52F4291816D200D74B26 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F3291816D200D74B26 /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		47DE52E929173AA900D74B26 /* EmployeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsVC.swift; sourceTree = "<group>"; };
 		47DE52ED291748B100D74B26 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		47DE52EF29174ED500D74B26 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		47DE52F1291814CD00D74B26 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		47DE52F3291816D200D74B26 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				47DE52E929173AA900D74B26 /* EmployeeDetailsVC.swift */,
 				47DE52ED291748B100D74B26 /* Employee.swift */,
 				47DE52EF29174ED500D74B26 /* Manager.swift */,
+				47DE52F1291814CD00D74B26 /* Vehicle.swift */,
+				47DE52F3291816D200D74B26 /* Car.swift */,
 			);
 			path = Codes_Pirates_Final_Project_MAD3115;
 			sourceTree = "<group>";
@@ -150,10 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DE52F2291814CD00D74B26 /* Vehicle.swift in Sources */,
 				475EA1892916F4F400CFE687 /* ViewController.swift in Sources */,
 				47DE52EE291748B100D74B26 /* Employee.swift in Sources */,
 				47DE52EA29173AA900D74B26 /* EmployeeDetailsVC.swift in Sources */,
 				475EA1992916FA5E00CFE687 /* RegisterVC.swift in Sources */,
+				47DE52F4291816D200D74B26 /* Car.swift in Sources */,
 				47DE52F029174ED500D74B26 /* Manager.swift in Sources */,
 				475EA1852916F4F400CFE687 /* AppDelegate.swift in Sources */,
 				475EA1872916F4F400CFE687 /* SceneDelegate.swift in Sources */,

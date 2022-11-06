@@ -16,8 +16,8 @@ protocol Employee{
     var rate: Int? { get set }
     var age: Int { get}
     //var income : Float { get }
-   // var employeeVehicle : Vehicle?
-   //    var contract : Contract?
+    var employeeVehicle : Vehicle? {get}
+    //var contract : Contract?
     func annualIncome()-> Float
 }
 
