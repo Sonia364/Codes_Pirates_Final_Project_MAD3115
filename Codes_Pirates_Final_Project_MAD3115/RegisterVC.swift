@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-   
+    
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var birthYear: UITextField!
@@ -36,14 +36,14 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       employeeTypeData = ["Manager","Programmer","Tester"]
-       vehicleColorData = ["Red", "Blue", "Yellow", "Green", "Orange", "Purple", "Pink", "Brown", "White", "Black", "Beige"]
+        
+        employeeTypeData = ["Manager","Programmer","Tester"]
+        vehicleColorData = ["Red", "Blue", "Yellow", "Green", "Orange", "Purple", "Pink", "Brown", "White", "Black", "Beige"]
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        delegate?.addEmployee(["employeeId":"345"])
-//    }
+    //    override func viewWillDisappear(_ animated: Bool) {
+    //        delegate?.addEmployee(["employeeId":"345"])
+    //    }
     
     
     
@@ -75,51 +75,51 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             employeeSpecLabel.isHidden = false
             employeeSpecInput.isHidden = false
             switch selectedValue{
-                case "Manager":
-                    employeeSpecLabel.text = "# Clients"
-                case "Tester":
-                    employeeSpecLabel.text = "# Bugs"
-                case "Programmer":
-                    employeeSpecLabel.text = "# Projects"
-                default:
-                    employeeSpecLabel.text = "# Clients"
-                    
+            case "Manager":
+                employeeSpecLabel.text = "# Clients"
+            case "Tester":
+                employeeSpecLabel.text = "# Bugs"
+            case "Programmer":
+                employeeSpecLabel.text = "# Projects"
+            default:
+                employeeSpecLabel.text = "# Clients"
+                
             }
             
         }else{
             
         }
-       
+        
     }
     
     @IBAction func vehicleTypeSelection(_ sender: Any) {
         vehicleType.selectedSegmentTintColor = .white
-        vehicleType.backgroundColor = .cyan
+        vehicleType.backgroundColor = .lightGray
         
         switch vehicleType.selectedSegmentIndex {
-            case 0:
-                carType.isHidden = false
-                carTypeInput.isHidden = false
-                sideCar.isHidden = true
-                sideCarType.isHidden = true
-                vehicleName = "Car"
-                
-            case 1 :
-                carType.isHidden = true
-                carTypeInput.isHidden = true
-                sideCar.isHidden = false
-                sideCarType.isHidden = false
-                vehicleName = "MotorCycle"
-              
-            default:
-                break
+        case 0:
+            carType.isHidden = false
+            carTypeInput.isHidden = false
+            sideCar.isHidden = true
+            sideCarType.isHidden = true
+            vehicleName = "Car"
+            
+        case 1 :
+            carType.isHidden = true
+            carTypeInput.isHidden = true
+            sideCar.isHidden = false
+            sideCarType.isHidden = false
+            vehicleName = "MotorCycle"
+            
+        default:
+            break
         }
-                
+        
     }
     
     @IBAction func sideCarSelection() {
         sideCarType.selectedSegmentTintColor = .white
-        sideCarType.backgroundColor = .cyan
+        sideCarType.backgroundColor = .lightGray
         
         switch sideCarType.selectedSegmentIndex {
         case 0:
@@ -161,32 +161,25 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     func displayHomeVC(){
         
         let newRegUser =  RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId:employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)], employeeSpecNumber: employeeSpecInput.text!, vehicleType:  self.vehicleName!, vehicleCarType: carTypeInput.text!, vehicleSideCar: "Yes", vehicleModel:vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
-    
-        //if employeeExists.isEmpty {
+        
+        
         if RegisteredUser.addEmployee(newEmployee: newRegUser) {
-
-            ////ViewController().employeeData.append(newRegUser)
+            
             let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
             navigationController?.pushViewController(homeVC, animated: true)
-            //self.performSegue(withIdentifier: "registerFormExit", sender: self)
             
-
         } else {
             let infoAlert = UIAlertController(title: "Employee Details!", message: "An employee with this employee id already exists.", preferredStyle: .alert)
             infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(infoAlert,animated: true)
         }
-//
-//
-//        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeScene")
-//        navigationController?.pushViewController(homeVC, animated: true)
+        
     }
     
     
     
-
-
+    
+    
 }
 
