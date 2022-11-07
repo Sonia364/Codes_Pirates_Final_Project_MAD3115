@@ -32,12 +32,20 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var vehicleName : String?
     var sideCarValue: String?
     
+    weak var delegate: ViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
        employeeTypeData = ["Manager","Programmer","Tester"]
        vehicleColorData = ["Red", "Blue", "Yellow", "Green", "Orange", "Purple", "Pink", "Brown", "White", "Black", "Beige"]
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        delegate?.addEmployee(["employeeId":"345"])
+//    }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -152,16 +160,12 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     func displayHomeVC(){
         
-        let newRegUser = ["firstName": firstName.text!, "lastName": lastName.text!, "birthYear": birthYear.text!, "monthlySalary": monthlySalary.text!, "occupationRate": occupationRate.text!, "employeeId": employeeId.text!, "employeeType": employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)]  , "employeeSpecNumber": employeeSpecInput.text!, "vehicleType": self.vehicleName!, "vehicleCarType": carTypeInput.text!, "vehicleSideCar": "Yes", "vehicleModel": vehicleModel.text!, "plateNumber": plateNumber.text!, "vehicleColor": vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)]]
-                 
-        
-        let employeeExists =  ViewController().employeeData.filter{ item in
-            return item["employeeId"] == employeeId.text!
-        }
-        
+        let newRegUser =  RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId:employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)], employeeSpecNumber: employeeSpecInput.text!, vehicleType:  self.vehicleName!, vehicleCarType: carTypeInput.text!, vehicleSideCar: "Yes", vehicleModel:vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
     
-        if employeeExists.isEmpty {
-            ViewController().employeeData.append(newRegUser)
+        //if employeeExists.isEmpty {
+        if RegisteredUser.addEmployee(newEmployee: newRegUser) {
+
+            ////ViewController().employeeData.append(newRegUser)
             let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
             navigationController?.pushViewController(homeVC, animated: true)

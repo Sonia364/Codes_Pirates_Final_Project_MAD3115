@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var regUsers = [RegisteredUser]()
+    
     var employeeData:[[String:String]] = [
                                                     ["firstName":"Serge",
                                                      "lastName": "Roy",
@@ -45,8 +47,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.reloadData()
+        
+        print(RegisteredUser.regUserList)
+        //tableView.reloadData()
         // Do any additional setup after loading the view.
+    }
+    
+    func addEmployee(_ employee: [String:String]){
+        employeeData.append(employee)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        
     }
     
     
@@ -55,14 +69,19 @@ class ViewController: UIViewController {
 extension ViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return employeeData.count
+       // return employeeData.count
+        return RegisteredUser.regUserList.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-        let rowData = employeeData[indexPath.row]
-        let name = String(rowData["firstName"]!) + String(rowData["lastName"]!)
-        let id  = String(rowData["employeeId"]!)
+//        let rowData = employeeData[indexPath.row]
+//        let name = String(rowData["firstName"]!) + String(rowData["lastName"]!)
+//        let id  = String(rowData["employeeId"]!)
+        let rowData = RegisteredUser.regUserList[indexPath.row]
+        let name = String(rowData.firstName) + String(rowData.lastName)
+        let id  = String(rowData.employeeId)
         cell.textLabel?.text = "Name: \(name)"
         cell.detailTextLabel?.text = "Id: \(id)"
         return cell
@@ -73,7 +92,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource
         let EmployeeDetailsVC = mainSB.instantiateViewController(withIdentifier: "EmployeeDetailsScene") as? EmployeeDetailsVC
         EmployeeDetailsVC?.delegate = self
         
-        EmployeeDetailsVC?.selectedEmployee = employeeData[indexPath.row]
+        EmployeeDetailsVC?.selectedEmployee = RegisteredUser.regUserList[indexPath.row]
         if let EmployeeDetailsVC = EmployeeDetailsVC {
             navigationController?.pushViewController(EmployeeDetailsVC, animated: true)
         }
