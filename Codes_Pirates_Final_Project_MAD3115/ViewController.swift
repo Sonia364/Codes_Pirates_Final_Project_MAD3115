@@ -22,6 +22,11 @@ class ViewController: UIViewController {
         let newRegUser =  RegisteredUser(firstName: "Serge", lastName: "Roy", birthYear: "1976", monthlySalary: "5000", occupationRate: "100", employeeId:"12", employeeType: "Manager", employeeSpecNumber: "18", vehicleType:  "Car", vehicleCarType: "Sports", vehicleSideCar: "Yes", vehicleModel:"Honda", plateNumber: "12345", vehicleColor: "White")
         
         RegisteredUser.addEmployee(newEmployee: newRegUser)
+        
+        let newRegUser2 =  RegisteredUser(firstName: "Mathew", lastName: "Radford", birthYear: "1986", monthlySalary: "6000", occupationRate: "80", employeeId:"13", employeeType: "Programmer", employeeSpecNumber: "10", vehicleType:  "Motorcycle", vehicleCarType: "", vehicleSideCar: "Yes", vehicleModel:"BMW", plateNumber: "5678", vehicleColor: "Blue")
+        
+        RegisteredUser.addEmployee(newEmployee: newRegUser2)
+        
         searchdata = RegisteredUser.regUserList
         //print(RegisteredUser.regUserList)
     }
