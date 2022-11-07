@@ -11,51 +11,20 @@ class ViewController: UIViewController {
 
     var regUsers = [RegisteredUser]()
     
-    var employeeData:[[String:String]] = [
-                                                    ["firstName":"Serge",
-                                                     "lastName": "Roy",
-                                                     "birthYear":"1985",
-                                                     "monthlySalary": "5000",
-                                                     "occupationRate":"100%",
-                                                     "employeeId":"11",
-                                                     "employeeType":"Manager",
-                                                     "employeeSpecNumber":"10",
-                                                     "vehicleType": "Car",
-                                                     "vehicleCarType": "Sports",
-                                                     "vehicleSideCar": "",
-                                                     "vehicleModel":"Lamborghini",
-                                                     "plateNumber":"Custom Plate",
-                                                     "vehicleColor": "White"
-                                                    ],
-                                                    ["firstName":"Emp_001",
-                                                     "lastName": "Serge",
-                                                     "birthYear":"1985",
-                                                     "monthlySalary": "5000",
-                                                     "occupationRate":"100%",
-                                                     "employeeId":"11",
-                                                     "employeeType":"Tester",
-                                                     "employeeSpecNumber":"10",
-                                                     "vehicleType": "Car",
-                                                     "vehicleCarType": "Sports",
-                                                     "vehicleSideCar": "",
-                                                     "vehicleModel":"Lamborghini",
-                                                     "plateNumber":"Custom Plate",
-                                                     "vehicleColor": "White"
-                                                    ]
-                                                ]
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let newRegUser =  RegisteredUser(firstName: "Serge", lastName: "Roy", birthYear: "1976", monthlySalary: "5000", occupationRate: "100", employeeId:"12", employeeType: "Manager", employeeSpecNumber: "18", vehicleType:  "Car", vehicleCarType: "Sports", vehicleSideCar: "Yes", vehicleModel:"Honda", plateNumber: "12345", vehicleColor: "White")
+
+        //if employeeExists.isEmpty {
+         RegisteredUser.addEmployee(newEmployee: newRegUser)
         
         print(RegisteredUser.regUserList)
         //tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
-    func addEmployee(_ employee: [String:String]){
-        employeeData.append(employee)
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,11 +45,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-//        let rowData = employeeData[indexPath.row]
-//        let name = String(rowData["firstName"]!) + String(rowData["lastName"]!)
-//        let id  = String(rowData["employeeId"]!)
         let rowData = RegisteredUser.regUserList[indexPath.row]
-        let name = String(rowData.firstName) + String(rowData.lastName)
+        let name = String(rowData.firstName) + " " + String(rowData.lastName)
         let id  = String(rowData.employeeId)
         cell.textLabel?.text = "Name: \(name)"
         cell.detailTextLabel?.text = "Id: \(id)"

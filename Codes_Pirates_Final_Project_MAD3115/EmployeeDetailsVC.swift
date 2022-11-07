@@ -21,7 +21,7 @@ class EmployeeDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let employeeType = selectedEmployee!.employeeType
-        let employeeName = selectedEmployee!.firstName + selectedEmployee!.lastName
+        let employeeName = selectedEmployee!.firstName + " " + selectedEmployee!.lastName
         let employeebirthYear = Int(selectedEmployee!.birthYear) ?? 0
         let employeeMonthlySalary = Int(selectedEmployee!.monthlySalary) ?? 0
         let employeeSpecNumber = Int(selectedEmployee!.employeeSpecNumber) ?? 0
