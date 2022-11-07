@@ -134,7 +134,7 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         for case let textField as UITextField in self.view.subviews {
             if textField.text == "" {
-                // show error
+
                 infoAlert.message = "You should fill all the fields"
                 showError(infoAlert)
                 return
