@@ -10,43 +10,46 @@ import UIKit
 class ViewController: UIViewController {
 
     var employeeData:[[String:String]] = [
-                                                    ["Employee_id":"Emp_001",
-                                                     "Employee_firstName": "Serge",
-                                                     "Employee_lastName":"",
-                                                     "Employee_birthYear":"1985",
-                                                     "Employee_monthlySalary": "5000",
-                                                     "Employee_occupationRate":"100%",
-                                                     "Employee_type":"Tester",
-                                                     "Employee_spec_number":"10",
-                                                     "Employee_vehicle": "Car",
-                                                     "Employee_carType": "Sports",
-                                                     "Employee_sideCar": "",
-                                                     "Employee_vehicleModel":"Lamborghini",
-                                                     "Employee_plateNumber":"Custom Plate",
-                                                     "Employee_vehicleColor": "White"
+                                                    ["firstName":"Serge",
+                                                     "lastName": "Roy",
+                                                     "birthYear":"1985",
+                                                     "monthlySalary": "5000",
+                                                     "occupationRate":"100%",
+                                                     "employeeId":"11",
+                                                     "employeeType":"Manager",
+                                                     "employeeSpecNumber":"10",
+                                                     "vehicleType": "Car",
+                                                     "vehicleCarType": "Sports",
+                                                     "vehicleSideCar": "",
+                                                     "vehicleModel":"Lamborghini",
+                                                     "plateNumber":"Custom Plate",
+                                                     "vehicleColor": "White"
                                                     ],
-                                                    ["Employee_id":"Emp_002",
-                                                     "Employee_firstName": "Peter",
-                                                     "Employee_lastName":"Rock",
-                                                     "Employee_birthYear":"1975",
-                                                     "Employee_monthlySalary": "6000",
-                                                     "Employee_occupationRate":"100%",
-                                                     "Employee_type":"Programmer",
-                                                     "Employee_spec_number":"10",
-                                                     "Employee_vehicle": "Motocycle",
-                                                     "Employee_carType": "",
-                                                     "Employee_sideCar": "True",
-                                                     "Employee_vehicleModel": "Honda",
-                                                     "Employee_plateNumber":"Custom Plate",
-                                                     "Employee_vehicleColor": "Black"
+                                                    ["firstName":"Emp_001",
+                                                     "lastName": "Serge",
+                                                     "birthYear":"1985",
+                                                     "monthlySalary": "5000",
+                                                     "occupationRate":"100%",
+                                                     "employeeId":"11",
+                                                     "employeeType":"Tester",
+                                                     "employeeSpecNumber":"10",
+                                                     "vehicleType": "Car",
+                                                     "vehicleCarType": "Sports",
+                                                     "vehicleSideCar": "",
+                                                     "vehicleModel":"Lamborghini",
+                                                     "plateNumber":"Custom Plate",
+                                                     "vehicleColor": "White"
                                                     ]
                                                 ]
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
-
+    
+    
 
 }
 extension ViewController : UITableViewDelegate, UITableViewDataSource
@@ -58,8 +61,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
         let rowData = employeeData[indexPath.row]
-        let name = String(rowData["Employee_firstName"]!) + String(rowData["Employee_lastName"]!)
-        let id  = String(rowData["Employee_id"]!)
+        let name = String(rowData["firstName"]!) + String(rowData["lastName"]!)
+        let id  = String(rowData["employeeId"]!)
         cell.textLabel?.text = "Name: \(name)"
         cell.detailTextLabel?.text = "Id: \(id)"
         return cell

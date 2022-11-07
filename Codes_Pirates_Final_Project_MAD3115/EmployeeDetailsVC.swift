@@ -15,20 +15,36 @@ class EmployeeDetailsVC: UIViewController {
         
     @IBOutlet weak var textView: UITextView!
     
+//    ["firstName":"Emp_001",
+//     "lastName": "Serge",
+//     "birthYear":"1985",
+//     "monthlySalary": "5000",
+//     "occupationRate":"100%",
+//     "employeeId":"11",
+//     "employeeType":"Tester",
+//     "employeeSpecNumber":"10",
+//     "vehicleType": "Car",
+//     "vehicleCarType": "Sports",
+//     "vehicleSideCar": "",
+//     "vehicleModel":"Lamborghini",
+//     "plateNumber":"Custom Plate",
+//     "vehicleColor": "White"
+//    ]
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let employeeType = selectedEmployee["Employee_type"]
-        let employeeName = selectedEmployee["Employee_firstName"]! + selectedEmployee["Employee_lastName"]!
-        let employeebirthYear = Int(selectedEmployee["Employee_birthYear"]!) ?? 0
-        let employeeMonthlySalary = Int(selectedEmployee["Employee_monthlySalary"]!) ?? 0
-        let employeeSpecNumber = Int(selectedEmployee["Employee_spec_number"]!) ?? 0
-        let employeeVehicle = selectedEmployee["Employee_vehicle"]!
-        let employeeVehicleModel = selectedEmployee["Employee_vehicleModel"]!
-        let employeeVehiclePlate = selectedEmployee["Employee_plateNumber"]!
-        let employeeVehicleColor = selectedEmployee["Employee_vehicleColor"]!
-        let employeeCarType = selectedEmployee["Employee_carType"]!
-        let employeeSideCar = (selectedEmployee["Employee_sideCar"]! == "Yes") ? true: false
+        let employeeType = selectedEmployee["employeeType"]
+        let employeeName = selectedEmployee["firstName"]! + selectedEmployee["lastName"]!
+        let employeebirthYear = Int(selectedEmployee["birthYear"]!) ?? 0
+        let employeeMonthlySalary = Int(selectedEmployee["monthlySalary"]!) ?? 0
+        let employeeSpecNumber = Int(selectedEmployee["employeeSpecNumber"]!) ?? 0
+        let employeeVehicle = selectedEmployee["vehicleType"]!
+        let employeeVehicleModel = selectedEmployee["vehicleModel"]!
+        let employeeVehiclePlate = selectedEmployee["plateNumber"]!
+        let employeeVehicleColor = selectedEmployee["vehicleColor"]!
+        let employeeCarType = selectedEmployee["vehicleCarType"]!
+        let employeeSideCar = (selectedEmployee["vehicleSideCar"]! == "Yes") ? true: false
         
         if employeeVehicle == "Car"{
             vehichleObj =  Car(model: employeeVehicleModel, plate: employeeVehiclePlate, color: employeeVehicleColor, type: employeeCarType)

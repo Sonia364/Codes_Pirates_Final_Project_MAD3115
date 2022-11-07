@@ -152,15 +152,22 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     func displayHomeVC(){
         
-        let newRegUser = RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId: employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)]  , employeeSpecNumber: employeeSpecInput.text!, vehicleType: self.vehicleName!, vehicleCarType: carTypeInput.text!, vehicleSideCar: "Yes", vehicleModel: vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
-
-        if RegisteredUser.addEmployee(newEmployee: newRegUser) {
+        let newRegUser = ["firstName": firstName.text!, "lastName": lastName.text!, "birthYear": birthYear.text!, "monthlySalary": monthlySalary.text!, "occupationRate": occupationRate.text!, "employeeId": employeeId.text!, "employeeType": employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)]  , "employeeSpecNumber": employeeSpecInput.text!, "vehicleType": self.vehicleName!, "vehicleCarType": carTypeInput.text!, "vehicleSideCar": "Yes", "vehicleModel": vehicleModel.text!, "plateNumber": plateNumber.text!, "vehicleColor": vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)]]
+                 
+        
+        let employeeExists =  ViewController().employeeData.filter{ item in
+            return item["employeeId"] == employeeId.text!
+        }
+        
+    
+        if employeeExists.isEmpty {
+            ViewController().employeeData.append(newRegUser)
             let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
             navigationController?.pushViewController(homeVC, animated: true)
+            //self.performSegue(withIdentifier: "registerFormExit", sender: self)
             
-            print(RegisteredUser.regUserList)
-            
+
         } else {
             let infoAlert = UIAlertController(title: "Employee Details!", message: "An employee with this employee id already exists.", preferredStyle: .alert)
             infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -172,6 +179,8 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 //        let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeScene")
 //        navigationController?.pushViewController(homeVC, animated: true)
     }
+    
+    
     
 
 
