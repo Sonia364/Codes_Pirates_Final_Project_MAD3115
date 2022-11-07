@@ -2,7 +2,7 @@
 //  Programmer.swift
 //  Codes_Pirates_Final_Project_MAD3115
 //
-//  Created by Others on 2022-11-06.
+//  Created by Code Pirates on 2022-11-06.
 //
 
 import Foundation
@@ -14,9 +14,7 @@ class Programmer: Employee{
     var _rate: Int? = 100
     var employeeVehicle: Vehicle?
    
-   // var age: Int
-    //var income: Float
-    
+  
     init(name: String, birthYear: Int, nbProjects: Int, monthlySalary: Int, _rate: Int? = 100,employeeVehicle: Vehicle?=nil) {
         self.name = name
         self.birthYear = birthYear
@@ -39,8 +37,6 @@ class Programmer: Employee{
         }
     }
     
-    
-    //var contract = contractInfo()
     
     func description()-> String  {
         

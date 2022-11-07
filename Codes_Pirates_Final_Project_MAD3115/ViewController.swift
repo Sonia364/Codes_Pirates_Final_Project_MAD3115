@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Codes_Pirates_Final_Project_MAD3115
 //
-//  Created by Others on 2022-11-05.
+//  Created by Code Pirates on 2022-11-05.
 //
 
 import UIKit
@@ -21,12 +21,9 @@ class ViewController: UIViewController {
         
         let newRegUser =  RegisteredUser(firstName: "Serge", lastName: "Roy", birthYear: "1976", monthlySalary: "5000", occupationRate: "100", employeeId:"12", employeeType: "Manager", employeeSpecNumber: "18", vehicleType:  "Car", vehicleCarType: "Sports", vehicleSideCar: "Yes", vehicleModel:"Honda", plateNumber: "12345", vehicleColor: "White")
         
-        //if employeeExists.isEmpty {
         RegisteredUser.addEmployee(newEmployee: newRegUser)
         searchdata = RegisteredUser.regUserList
-        print(RegisteredUser.regUserList)
-        //tableView.reloadData()
-        // Do any additional setup after loading the view.
+        //print(RegisteredUser.regUserList)
     }
     
     
@@ -41,7 +38,6 @@ class ViewController: UIViewController {
 extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return employeeData.count
         return searchdata.count
         
     }
@@ -67,6 +63,23 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
         }
     }
     
-
+    //MARK:- SEARCH BAR DELEGATE METHOD FUNCTION
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        searchBar.text = ""
+        searchdata = RegisteredUser.regUserList
+        searchBar.endEditing(true)
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        searchdata = searchText.isEmpty ? RegisteredUser.regUserList : RegisteredUser.regUserList.filter
+        {
+            (item: RegisteredUser) -> Bool in
+            return item.firstName.contains(searchText) || item.lastName.contains(searchText) || item.employeeId.contains(searchText)
+        }
+        tableView.reloadData()
+    }
 }
 

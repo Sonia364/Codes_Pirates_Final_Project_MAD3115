@@ -2,7 +2,7 @@
 //  RegisterVC.swift
 //  Codes_Pirates_Final_Project_MAD3115
 //
-//  Created by Others on 2022-11-05.
+//  Created by Code Pirates on 2022-11-05.
 //
 
 import UIKit
@@ -40,12 +40,6 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         employeeTypeData = ["Manager","Programmer","Tester"]
         vehicleColorData = ["Red", "Blue", "Yellow", "Green", "Orange", "Purple", "Pink", "Brown", "White", "Black", "Beige"]
     }
-    
-    //    override func viewWillDisappear(_ animated: Bool) {
-    //        delegate?.addEmployee(["employeeId":"345"])
-    //    }
-    
-    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
