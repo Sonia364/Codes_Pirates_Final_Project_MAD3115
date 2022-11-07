@@ -14,6 +14,7 @@
 		475EA18E2916F4F400CFE687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 475EA18D2916F4F400CFE687 /* Assets.xcassets */; };
 		475EA1912916F4F400CFE687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475EA18F2916F4F400CFE687 /* LaunchScreen.storyboard */; };
 		475EA1992916FA5E00CFE687 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475EA1982916FA5E00CFE687 /* RegisterVC.swift */; };
+		475EEBE5291953CC004C35E8 /* RegisteredUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475EEBE4291953CC004C35E8 /* RegisteredUser.swift */; };
 		47DE52EA29173AA900D74B26 /* EmployeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52E929173AA900D74B26 /* EmployeeDetailsVC.swift */; };
 		47DE52EE291748B100D74B26 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52ED291748B100D74B26 /* Employee.swift */; };
 		47DE52F029174ED500D74B26 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52EF29174ED500D74B26 /* Manager.swift */; };
@@ -22,7 +23,6 @@
 		47DE52F629184C8100D74B26 /* Motorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F529184C8100D74B26 /* Motorcycle.swift */; };
 		47DE52F82918523900D74B26 /* Programmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F72918523900D74B26 /* Programmer.swift */; };
 		47DE52FA2918524500D74B26 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52F92918524500D74B26 /* Tester.swift */; };
-		47DE52FE2918B07A00D74B26 /* RegisteredUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE52FD2918B07A00D74B26 /* RegisteredUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +35,7 @@
 		475EA1902916F4F400CFE687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		475EA1922916F4F400CFE687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		475EA1982916FA5E00CFE687 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		475EEBE4291953CC004C35E8 /* RegisteredUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredUser.swift; sourceTree = "<group>"; };
 		47DE52E929173AA900D74B26 /* EmployeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsVC.swift; sourceTree = "<group>"; };
 		47DE52ED291748B100D74B26 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		47DE52EF29174ED500D74B26 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		47DE52F529184C8100D74B26 /* Motorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motorcycle.swift; sourceTree = "<group>"; };
 		47DE52F72918523900D74B26 /* Programmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programmer.swift; sourceTree = "<group>"; };
 		47DE52F92918524500D74B26 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
-		47DE52FD2918B07A00D74B26 /* RegisteredUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisteredUser.swift; path = ../../RegisteredUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 				47DE52F529184C8100D74B26 /* Motorcycle.swift */,
 				47DE52F72918523900D74B26 /* Programmer.swift */,
 				47DE52F92918524500D74B26 /* Tester.swift */,
-				47DE52FD2918B07A00D74B26 /* RegisteredUser.swift */,
+				475EEBE4291953CC004C35E8 /* RegisteredUser.swift */,
 			);
 			path = Codes_Pirates_Final_Project_MAD3115;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 				475EA1992916FA5E00CFE687 /* RegisterVC.swift in Sources */,
 				47DE52FA2918524500D74B26 /* Tester.swift in Sources */,
 				47DE52F4291816D200D74B26 /* Car.swift in Sources */,
-				47DE52FE2918B07A00D74B26 /* RegisteredUser.swift in Sources */,
+				475EEBE5291953CC004C35E8 /* RegisteredUser.swift in Sources */,
 				47DE52F629184C8100D74B26 /* Motorcycle.swift in Sources */,
 				47DE52F029174ED500D74B26 /* Manager.swift in Sources */,
 				475EA1852916F4F400CFE687 /* AppDelegate.swift in Sources */,

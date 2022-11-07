@@ -21,7 +21,7 @@ class Motorcycle: Vehicle{
         self.sideCar =  sideCar
     }
     
-    func getFullDetails() -> String {
+    func getFullDetails() -> String  {
         var motorDescription: String
         motorDescription = "Employee has a motorcycle\n"
         motorDescription += (self as Vehicle).getDetails()

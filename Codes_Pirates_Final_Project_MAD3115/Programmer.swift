@@ -42,7 +42,7 @@ class Programmer: Employee{
     
     //var contract = contractInfo()
     
-    func description()-> String {
+    func description()-> String  {
         
         let income = annualIncome() + annualBonus()
         var statement: String = ""
