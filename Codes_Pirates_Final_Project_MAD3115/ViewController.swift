@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         RegisteredUser.addEmployee(newEmployee: newRegUser2)
         
         searchdata = RegisteredUser.regUserList
-        //print(RegisteredUser.regUserList)
     }
     
     
