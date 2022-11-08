@@ -49,7 +49,7 @@
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <color key="backgroundColor" red="0.77096807709215776" green="0.96689504380000002" blue="0.91022083680776888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="i6V-0z-V2W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="18L-oM-pr4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6V-0z-V2W" secondAttribute="trailing" constant="20" id="2sx-fd-GfA"/>
@@ -319,7 +319,7 @@
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qZX-50-8kl"/>
-                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <color key="backgroundColor" red="0.77096807710000004" green="0.96689504380000002" blue="0.91022083679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="REGISTRATION FORM" id="3dt-iO-ou6"/>
                     <connections>
@@ -363,7 +363,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WVO-tn-tzT"/>
-                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <color key="backgroundColor" red="0.77096807710000004" green="0.96689504380000002" blue="0.91022083679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="FCg-Mk-Uoh" firstAttribute="top" secondItem="WVO-tn-tzT" secondAttribute="top" constant="100" id="UDd-YE-fq2"/>
                             <constraint firstItem="WVO-tn-tzT" firstAttribute="trailing" secondItem="FCg-Mk-Uoh" secondAttribute="trailing" constant="30" id="VJM-dj-HEC"/>
@@ -404,9 +404,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
