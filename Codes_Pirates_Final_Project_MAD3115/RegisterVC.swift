@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var firstName: UITextField!
@@ -23,9 +25,10 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var employeeSpecInput: UITextField!
     @IBOutlet weak var employeeSpecLabel: UILabel!
     @IBOutlet weak var carTypeInput: UITextField!
-    @IBOutlet weak var sideCar: UILabel!
     @IBOutlet weak var sideCarType: UISegmentedControl!
-    @IBOutlet weak var carType: UILabel!
+    
+    @IBOutlet weak var sidecarStack: UIStackView!
+    @IBOutlet weak var carTypeStack: UIStackView!
     
     var employeeTypeData: [String] = []
     var vehicleColorData:  [String] = []
@@ -92,17 +95,13 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         switch vehicleType.selectedSegmentIndex {
         case 0:
-            carType.isHidden = false
-            carTypeInput.isHidden = false
-            sideCar.isHidden = true
-            sideCarType.isHidden = true
+            carTypeStack.isHidden = false
+            sidecarStack.isHidden = true
             vehicleName = "Car"
             
         case 1 :
-            carType.isHidden = true
-            carTypeInput.isHidden = true
-            sideCar.isHidden = false
-            sideCarType.isHidden = false
+            carTypeStack.isHidden = true
+            sidecarStack.isHidden = false
             vehicleName = "MotorCycle"
             
         default:
