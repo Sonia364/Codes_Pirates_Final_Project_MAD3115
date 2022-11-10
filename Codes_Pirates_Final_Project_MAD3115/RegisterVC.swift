@@ -8,7 +8,6 @@
 import UIKit
 
 
-
 class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var firstName: UITextField!
@@ -32,8 +31,10 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     var employeeTypeData: [String] = []
     var vehicleColorData:  [String] = []
-    var vehicleName : String?
-    var sideCarValue: String?
+    var vehicleName : String = "Car"
+    var sideCarValue: String = "No"
+//    var vehicleName : String?
+//    var sideCarValue: String?
     
     weak var delegate: ViewController?
     
@@ -42,6 +43,9 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         employeeTypeData = ["Manager","Programmer","Tester"]
         vehicleColorData = ["Red", "Blue", "Yellow", "Green", "Orange", "Purple", "Pink", "Brown", "White", "Black", "Beige"]
+        
+        employeeTypePicker.selectRow(0, inComponent: 0, animated: true)
+        vehicleColorPicker.selectRow(0, inComponent: 0, animated: true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -153,14 +157,15 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     func displayHomeVC(){
         
-        let newRegUser =  RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId:employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)], employeeSpecNumber: employeeSpecInput.text!, vehicleType:  self.vehicleName!, vehicleCarType: carTypeInput.text!, vehicleSideCar: "Yes", vehicleModel:vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
+        let newRegUser =  RegisteredUser(firstName: firstName.text!, lastName: lastName.text!, birthYear: birthYear.text!, monthlySalary: monthlySalary.text!, occupationRate: occupationRate.text!, employeeId:employeeId.text!, employeeType: employeeTypeData[employeeTypePicker.selectedRow(inComponent: 0)], employeeSpecNumber: employeeSpecInput.text!, vehicleType:  self.vehicleName, vehicleCarType: carTypeInput.text!, vehicleSideCar: "Yes", vehicleModel:vehicleModel.text!, plateNumber: plateNumber.text!, vehicleColor: vehicleColorData[vehicleColorPicker.selectedRow(inComponent: 0)])
         
         
         if RegisteredUser.addEmployee(newEmployee: newRegUser) {
             
-            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
-            navigationController?.pushViewController(homeVC, animated: true)
+//            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeTVScene")
+//            navigationController?.pushViewController(homeVC, animated: true)
+            navigationController?.popViewController(animated: true)
             
         } else {
             let infoAlert = UIAlertController(title: "Employee Details!", message: "An employee with this employee id already exists.", preferredStyle: .alert)

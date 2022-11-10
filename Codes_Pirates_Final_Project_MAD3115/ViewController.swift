@@ -27,15 +27,17 @@ class ViewController: UIViewController {
         
         RegisteredUser.addEmployee(newEmployee: newRegUser2)
         
-        searchdata = RegisteredUser.regUserList
+        
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
         
+        searchdata = RegisteredUser.regUserList
+        
+        tableView.reloadData()
     }
     
 }
