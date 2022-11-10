@@ -44,6 +44,9 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         employeeTypePicker.selectRow(0, inComponent: 0, animated: true)
         vehicleColorPicker.selectRow(0, inComponent: 0, animated: true)
+        
+        let myColor = UIColor.red
+        firstName.layer.borderColor = myColor.cgColor
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -100,6 +103,8 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             carTypeStack.isHidden = false
             sidecarStack.isHidden = true
             vehicleName = "Car"
+            
+            //vehicleName.textColor = .white
             
         case 1 :
             carTypeStack.isHidden = true

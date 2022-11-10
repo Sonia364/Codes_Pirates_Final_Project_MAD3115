@@ -16,55 +16,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6V-0z-V2W">
-                                <rect key="frame" x="20" y="792.33333333333337" width="353" height="35.666666666666629"/>
-                                <color key="backgroundColor" red="0.92128556969999997" green="0.1222931745" blue="0.1320303981" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ADD">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Ylf-kf-evp" kind="show" id="boz-Fl-hL8"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-Yh-cve">
-                                <rect key="frame" x="20" y="194" width="353" height="593.33333333333337"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="593.33333333333337" id="7vU-0y-LkV"/>
-                                </constraints>
-                                <color key="sectionIndexBackgroundColor" red="0.42104996459999999" green="0.53582496079999997" blue="0.78361636400000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="kjV-FW-x2D"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rHc-Al-xMO"/>
-                                </connections>
-                            </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Can-Jr-Uf4">
-                                <rect key="frame" x="20" y="133" width="353" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="83K-dC-DHD"/>
-                                </connections>
-                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Da6-F0-vtr">
+                                <rect key="frame" x="5" y="113" width="383" height="680"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Can-Jr-Uf4">
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="60.333333333333336"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="83K-dC-DHD"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-Yh-cve">
+                                        <rect key="frame" x="0.0" y="65.333333333333371" width="383" height="574"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.42104996459999999" green="0.53582496079999997" blue="0.78361636400000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="kjV-FW-x2D"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="rHc-Al-xMO"/>
+                                        </connections>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6V-0z-V2W">
+                                        <rect key="frame" x="0.0" y="644.33333333333337" width="383" height="35.666666666666629"/>
+                                        <color key="backgroundColor" red="0.92128556969999997" green="0.1222931745" blue="0.1320303981" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="ADD">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="Ylf-kf-evp" kind="show" id="boz-Fl-hL8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="i6V-0z-V2W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="18L-oM-pr4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6V-0z-V2W" secondAttribute="trailing" constant="20" id="2sx-fd-GfA"/>
-                            <constraint firstItem="i6V-0z-V2W" firstAttribute="top" secondItem="0zr-Yh-cve" secondAttribute="bottom" constant="5.0000000000001137" id="AWg-d2-I0H"/>
-                            <constraint firstItem="Can-Jr-Uf4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="LQp-Vj-GUh"/>
-                            <constraint firstItem="i6V-0z-V2W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Onx-8F-NtB"/>
-                            <constraint firstItem="0zr-Yh-cve" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S9W-2f-gn8"/>
-                            <constraint firstItem="0zr-Yh-cve" firstAttribute="top" secondItem="Can-Jr-Uf4" secondAttribute="bottom" constant="5" id="Sey-fH-bn2"/>
-                            <constraint firstItem="Can-Jr-Uf4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TaA-fS-khC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0zr-Yh-cve" secondAttribute="trailing" constant="20" id="eeA-Pt-6lZ"/>
-                            <constraint firstItem="Can-Jr-Uf4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kCT-64-kQg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Can-Jr-Uf4" secondAttribute="trailing" constant="20" id="l8z-0W-gnh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Can-Jr-Uf4" secondAttribute="trailing" constant="20" id="l9w-Wi-aAo"/>
-                            <constraint firstItem="i6V-0z-V2W" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="nCF-Dc-GvC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6V-0z-V2W" secondAttribute="trailing" constant="20" id="qan-Br-x6L"/>
+                            <constraint firstItem="Da6-F0-vtr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="McT-Dt-TeV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Da6-F0-vtr" secondAttribute="bottom" constant="25" id="T4C-4x-LeR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Da6-F0-vtr" secondAttribute="trailing" constant="5" id="fHW-Gb-vSl"/>
+                            <constraint firstItem="Da6-F0-vtr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="nsx-Bw-EY5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LWk-kP-znV"/>
@@ -246,7 +238,7 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LUK-Yg-pip">
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LUK-Yg-pip">
                                                         <rect key="frame" x="192.66666666666663" y="0.0" width="168.33333333333337" height="32"/>
                                                         <segments>
                                                             <segment title="Car"/>
