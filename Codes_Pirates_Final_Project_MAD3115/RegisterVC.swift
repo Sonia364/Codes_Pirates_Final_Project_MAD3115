@@ -4,10 +4,10 @@
 //
 //  Created by Code Pirates on 2022-11-05.
 //
-
+ 
 import UIKit
-
-
+ 
+ 
 class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var firstName: UITextField!
@@ -33,8 +33,6 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var vehicleColorData:  [String] = []
     var vehicleName : String = "Car"
     var sideCarValue: String = "No"
-//    var vehicleName : String?
-//    var sideCarValue: String?
     
     weak var delegate: ViewController?
     
@@ -137,7 +135,7 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         for case let textField as UITextField in self.view.subviews {
             if textField.text == "" {
-
+ 
                 infoAlert.message = "You should fill all the fields"
                 showError(infoAlert)
                 return
@@ -180,4 +178,3 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     
 }
-
