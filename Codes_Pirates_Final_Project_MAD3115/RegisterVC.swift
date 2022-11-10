@@ -45,8 +45,24 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         employeeTypePicker.selectRow(0, inComponent: 0, animated: true)
         vehicleColorPicker.selectRow(0, inComponent: 0, animated: true)
         
+        addBorder(view: firstName)
+        addBorder(view: lastName)
+        addBorder(view: birthYear)
+        addBorder(view: monthlySalary)
+        addBorder(view: occupationRate)
+        addBorder(view: employeeId)
+        addBorder(view: vehicleModel)
+        addBorder(view: plateNumber)
+        addBorder(view: employeeSpecInput)
+        addBorder(view: carTypeInput) //sideCarType
+        addBorder(view: vehicleType)
+        addBorder(view: sideCarType)
+    }
+    
+    func addBorder(view: UIView) {
         let myColor = UIColor.red
-        firstName.layer.borderColor = myColor.cgColor
+        view.layer.borderColor = myColor.cgColor
+        view.layer.borderWidth = 1.0
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
