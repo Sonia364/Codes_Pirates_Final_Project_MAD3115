@@ -29,6 +29,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-Yh-cve">
                                         <rect key="frame" x="0.0" y="65.333333333333371" width="383" height="574"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="separatorColor" systemColor="systemRedColor"/>
                                         <color key="sectionIndexBackgroundColor" red="0.42104996459999999" green="0.53582496079999997" blue="0.78361636400000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="kjV-FW-x2D"/>
@@ -240,6 +241,7 @@
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LUK-Yg-pip">
                                                         <rect key="frame" x="192.66666666666663" y="0.0" width="168.33333333333337" height="32"/>
+                                                        <color key="backgroundColor" red="1" green="0.54897749340000002" blue="0.49924762610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <segments>
                                                             <segment title="Car"/>
                                                             <segment title="Motorbike"/>
@@ -279,6 +281,7 @@
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U8s-xh-Aeq">
                                                         <rect key="frame" x="192.66666666666663" y="0.0" width="168.33333333333337" height="1"/>
+                                                        <color key="backgroundColor" red="1" green="0.54897749340000002" blue="0.49924762610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <segments>
                                                             <segment title="Yes"/>
                                                             <segment title="No"/>

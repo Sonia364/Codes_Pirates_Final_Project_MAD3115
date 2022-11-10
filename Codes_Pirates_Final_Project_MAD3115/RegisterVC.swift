@@ -92,6 +92,7 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             let selectedValue = employeeTypeData[row]
             employeeSpecLabel.isHidden = false
             employeeSpecInput.isHidden = false
+            //employeeSpecInput.backgroundColor = .red
             switch selectedValue{
             case "Manager":
                 employeeSpecLabel.text = "# Clients"
@@ -112,15 +113,13 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     @IBAction func vehicleTypeSelection(_ sender: Any) {
         vehicleType.selectedSegmentTintColor = .white
-        vehicleType.backgroundColor = .lightGray
+        //vehicleType.backgroundColor = .lightGray
         
         switch vehicleType.selectedSegmentIndex {
         case 0:
             carTypeStack.isHidden = false
             sidecarStack.isHidden = true
             vehicleName = "Car"
-            
-            //vehicleName.textColor = .white
             
         case 1 :
             carTypeStack.isHidden = true
@@ -135,7 +134,7 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     @IBAction func sideCarSelection() {
         sideCarType.selectedSegmentTintColor = .white
-        sideCarType.backgroundColor = .lightGray
+        //sideCarType.backgroundColor = .lightGray
         
         switch sideCarType.selectedSegmentIndex {
         case 0:
