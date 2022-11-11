@@ -153,9 +153,21 @@ class RegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         let infoAlert = UIAlertController(title: "Verify Details!", message:"", preferredStyle: .alert)
         
-        for case let textField as UITextField in self.view.subviews {
-            if textField.text == "" {
- 
+        let textFieldsArray = [
+            firstName,
+            lastName,
+            birthYear,
+            monthlySalary,
+            occupationRate,
+            employeeId,
+            vehicleModel,
+            plateNumber,
+            employeeSpecInput,
+            carTypeInput,
+        ]
+        
+        for textfield in textFieldsArray {
+            if textfield!.text!.isEmpty{
                 infoAlert.message = "You should fill all the fields"
                 showError(infoAlert)
                 return
